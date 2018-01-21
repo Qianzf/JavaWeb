@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Method;
 import java.util.*;
 
-@Component
+
 public class WebSocketInit implements ApplicationContextAware {
 
     private static Logger log = Logger.getLogger(WebSocketInit.class);
