@@ -26,11 +26,6 @@ public class SessionFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
         if ("true".equals(cosVisit)) {
 
-            /*httpResponse.setHeader("Access-Control-Allow-Origin", "*");
-            // httpResponse.setHeader("Access-Control-Allow-Headers", "Origin, Authorization, X-Requested-With, Content-Type, Accept");
-            httpResponse.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT,DELETE");
-            HttpServletResponse httpResponse = (HttpServletResponse) response;*/
-
             httpResponse.setHeader("Access-Control-Allow-Origin", "*");
             httpResponse.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
             httpResponse.setHeader("Access-Control-Max-Age", "1800");
