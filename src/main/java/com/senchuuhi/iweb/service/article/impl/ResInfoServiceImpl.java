@@ -1,10 +1,11 @@
-package com.senchuuhi.iweb.service.article;
+package com.senchuuhi.iweb.service.article.impl;
 
 
 import com.github.pagehelper.PageHelper;
 import com.senchuuhi.iweb.auto.dao.ResInfoMapper;
-import com.senchuuhi.iweb.auto.entity.ResInfoExample;
 import com.senchuuhi.iweb.auto.entity.ResInfo;
+import com.senchuuhi.iweb.auto.entity.ResInfoExample;
+import com.senchuuhi.iweb.service.article.iface.ResInfoService;
 import com.senchuuhi.iweb.wsk.entity.WSReturn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ResInfoService {
+public class ResInfoServiceImpl implements ResInfoService{
 
     @Autowired
     private ResInfoMapper resInfoMapper;

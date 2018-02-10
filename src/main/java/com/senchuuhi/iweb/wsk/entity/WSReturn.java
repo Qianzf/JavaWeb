@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class WSReturn implements Serializable {
 
+    private static final long serialVersionUID = -6246309339639014867L;
+
     private String command;
 
     private String orginCommand;

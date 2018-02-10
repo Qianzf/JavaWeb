@@ -1,16 +1,17 @@
-package com.senchuuhi.iweb.service.article;
+package com.senchuuhi.iweb.service.article.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.senchuuhi.iweb.auto.dao.ResArticleMapper;
 import com.senchuuhi.iweb.auto.entity.ResArticle;
 import com.senchuuhi.iweb.auto.entity.ResArticleExample;
+import com.senchuuhi.iweb.service.article.iface.ResArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class ResArticleService {
+public class ResArticleServiceImpl implements ResArticleService{
 
     @Autowired
     private ResArticleMapper resArticleMapper;
