@@ -7,8 +7,9 @@ import org.springframework.stereotype.Component;
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 
-@ServerEndpoint(value = "/isocket")
+
 @Component
+@ServerEndpoint(value = "/isocket")
 public class MyWebSocket {
 
     private Logger log = Logger.getLogger(this.getClass());
@@ -18,7 +19,7 @@ public class MyWebSocket {
      */
     @OnOpen
     public void onOpen(Session session) {
-        WebSocketApi.onOpen(session);
+        //WebSocketApi.onOpen(session);
     }
 
     /**
@@ -26,7 +27,7 @@ public class MyWebSocket {
      */
     @OnClose
     public void onClose(Session session) {
-        WebSocketApi.onClose(session);
+        //WebSocketApi.onClose(session);
     }
 
     /**

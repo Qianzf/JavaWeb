@@ -13,7 +13,7 @@ public class SessionFilter implements Filter {
 
     Logger log = Logger.getLogger(SessionFilter.class);
 
-    @Value("${application.cos.visit}")
+    @Value("${application.cros.visit}")
     private String cosVisit;
 
     @Override
