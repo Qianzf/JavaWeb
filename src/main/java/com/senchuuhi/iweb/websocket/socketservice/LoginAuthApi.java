@@ -1,4 +1,4 @@
-package com.senchuuhi.iweb.socketservice;
+package com.senchuuhi.iweb.websocket.socketservice;
 
 import com.senchuuhi.iweb.wsk.atiface.WS;
 import com.senchuuhi.iweb.wsk.core.WebSocketAuthAlgorithm;

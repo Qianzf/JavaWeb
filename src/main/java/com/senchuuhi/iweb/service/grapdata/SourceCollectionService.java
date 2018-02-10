@@ -1,4 +1,4 @@
-package com.senchuuhi.iweb.service;
+package com.senchuuhi.iweb.service.grapdata;
 
 import org.springframework.stereotype.Service;
 

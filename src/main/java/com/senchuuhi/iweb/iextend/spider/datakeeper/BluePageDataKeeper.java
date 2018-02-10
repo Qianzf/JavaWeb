@@ -1,8 +1,8 @@
-package com.senchuuhi.iweb.functions.spider.datakeeper;
+package com.senchuuhi.iweb.iextend.spider.datakeeper;
 
 import com.senchuuhi.iweb.auto.dao.ResInfoMapper;
 import com.senchuuhi.iweb.auto.entity.ResInfoExample;
-import com.senchuuhi.iweb.functions.spider.processor.BluePageProcessor;
+import com.senchuuhi.iweb.iextend.spider.processor.BluePageProcessor;
 import com.senchuuhi.iweb.auto.entity.ResInfo;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

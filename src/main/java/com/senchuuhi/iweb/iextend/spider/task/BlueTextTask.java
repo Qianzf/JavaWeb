@@ -1,8 +1,8 @@
-package com.senchuuhi.iweb.functions.spider.task;
+package com.senchuuhi.iweb.iextend.spider.task;
 
 
-import com.senchuuhi.iweb.functions.spider.datakeeper.BlueTextDataKeeper;
-import com.senchuuhi.iweb.functions.spider.processor.BlueTextProcessor;
+import com.senchuuhi.iweb.iextend.spider.datakeeper.BlueTextDataKeeper;
+import com.senchuuhi.iweb.iextend.spider.processor.BlueTextProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import us.codecraft.webmagic.Spider;

@@ -1,7 +1,6 @@
-package com.senchuuhi.iweb.socketservice;
+package com.senchuuhi.iweb.websocket.socketservice;
 
 import com.senchuuhi.iweb.wsk.atiface.WS;
-import com.senchuuhi.iweb.wsk.atiface.WSPIPE;
 import com.senchuuhi.iweb.wsk.entity.WSReturn;
 import com.senchuuhi.iweb.wsk.iface.WSApi;
 import org.springframework.stereotype.Component;

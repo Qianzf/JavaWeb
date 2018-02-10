@@ -1,4 +1,4 @@
-package com.senchuuhi.iweb.functions.spider.monitor;
+package com.senchuuhi.iweb.iextend.spider.monitor;
 
 public interface SpiderStatusInfo {
 

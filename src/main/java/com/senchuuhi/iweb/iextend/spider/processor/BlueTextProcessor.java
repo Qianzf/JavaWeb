@@ -1,9 +1,9 @@
-package com.senchuuhi.iweb.functions.spider.processor;
+package com.senchuuhi.iweb.iextend.spider.processor;
 
 
 import com.senchuuhi.iweb.auto.entity.ResArticle;
-import com.senchuuhi.iweb.functions.spider.monitor.SpiderStatusInfo;
-import com.senchuuhi.iweb.functions.spider.task.BlueTextTask;
+import com.senchuuhi.iweb.iextend.spider.monitor.SpiderStatusInfo;
+import com.senchuuhi.iweb.iextend.spider.task.BlueTextTask;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
