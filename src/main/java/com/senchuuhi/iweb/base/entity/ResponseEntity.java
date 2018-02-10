@@ -3,7 +3,7 @@ package com.senchuuhi.iweb.base.entity;
 import java.io.Serializable;
 import java.util.Map;
 
-public class RequestEntity implements Serializable {
+public class ResponseEntity implements Serializable {
 
     /*** serialVersionUID ***/
     private static final long serialVersionUID = 1636161099193247911L;
@@ -11,11 +11,8 @@ public class RequestEntity implements Serializable {
     /*** 状态 ***/
     private boolean status = true;
 
-    /*** 请求指令 ***/
-    private String command = "";
-
-    /*** 请求参数 ***/
-    private Map<String, String> query = null;
+    /*** 返回消息 ***/
+    private String message = "";
 
     /*** 附加的数据 **/
     private Object data = null;
@@ -28,20 +25,12 @@ public class RequestEntity implements Serializable {
         this.status = status;
     }
 
-    public String getCommand() {
-        return command;
+    public String getMessage() {
+        return message;
     }
 
-    public void setCommand(String command) {
-        this.command = command;
-    }
-
-    public Map<String, String> getQuery() {
-        return query;
-    }
-
-    public void setQuery(Map<String, String> query) {
-        this.query = query;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public Object getData() {
