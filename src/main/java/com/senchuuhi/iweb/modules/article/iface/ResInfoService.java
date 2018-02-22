@@ -1,4 +1,4 @@
-package com.senchuuhi.iweb.service.article.iface;
+package com.senchuuhi.iweb.modules.article.iface;
 
 
 import com.senchuuhi.iweb.wsk.entity.WSReturn;

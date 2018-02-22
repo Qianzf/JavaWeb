@@ -1,7 +1,7 @@
-package com.senchuuhi.iweb.service.article.iface;
+package com.senchuuhi.iweb.modules.article.iface;
 
 import com.senchuuhi.iweb.auto.entity.ResArticle;
-import com.senchuuhi.iweb.service.article.constants.ArticleConstants;
+import com.senchuuhi.iweb.modules.article.constants.ArticleConstants;
 
 import java.util.List;
 
