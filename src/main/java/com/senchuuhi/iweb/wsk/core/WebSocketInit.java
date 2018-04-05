@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Method;
 import java.util.*;
 
-@Component
+/*@Component*/
 public class WebSocketInit implements ApplicationContextAware {
 
     private static Logger log = Logger.getLogger(WebSocketInit.class);
@@ -58,7 +58,7 @@ public class WebSocketInit implements ApplicationContextAware {
         socketPipeMethods = new ArrayList<>();
         // 指令匹配（只允许匹配一个，多个不允许！）
         for (String key : socketServiceMap.keySet()) {
-            // 获取有效的socket modules
+            // 获取有效的socket functions
             WSApi service = socketServiceMap.get(key);
             // 所有的类
             Class clazz = service.getClass();

@@ -68,7 +68,7 @@ public class WebSocketCommand {
     /**
      * 执行方法
      *
-     * @param service      modules
+     * @param service      functions
      * @param method       method
      * @param session      session
      * @param orignCommand orignCommand

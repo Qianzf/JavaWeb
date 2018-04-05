@@ -1,11 +1,11 @@
-package com.senchuuhi.iweb.modules.article.service.impl;
+package com.senchuuhi.iweb.functions.article.service.impl;
 
 
 import com.github.pagehelper.PageHelper;
 import com.senchuuhi.iweb.auto.dao.ResInfoMapper;
 import com.senchuuhi.iweb.auto.entity.ResInfo;
 import com.senchuuhi.iweb.auto.entity.ResInfoExample;
-import com.senchuuhi.iweb.modules.article.service.ResInfoService;
+import com.senchuuhi.iweb.functions.article.service.ResInfoService;
 import com.senchuuhi.iweb.wsk.entity.WSReturn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

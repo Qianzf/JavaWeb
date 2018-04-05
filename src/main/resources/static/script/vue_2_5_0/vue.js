@@ -251,7 +251,7 @@ var no = function (a, b, c) { return false; };
 var identity = function (_) { return _; };
 
 /**
- * Generate a static keys string from compiler modules.
+ * Generate a static keys string from compiler functions.
  */
 function genStaticKeys (modules) {
   return modules.reduce(function (keys, m) {
@@ -5407,7 +5407,7 @@ function createPatchFunction (backend) {
       setScope(vnode);
     } else {
       // empty component root.
-      // skip all element-related modules except for ref (#3455)
+      // skip all element-related functions except for ref (#3455)
       registerRef(vnode);
       // make sure to invoke the insert hook
       insertedVnodeQueue.push(vnode);
@@ -5720,7 +5720,7 @@ function createPatchFunction (backend) {
   }
 
   var bailed = false;
-  // list of modules that can skip create hook during hydration because they
+  // list of functions that can skip create hook during hydration because they
   // are already rendered on the client or has no need for initialization
   var isRenderedModule = makeMap('attrs,style,class,staticClass,staticStyle,key');
 
@@ -7579,7 +7579,7 @@ var platformModules = [
 /*  */
 
 // the directive module should be applied last, after all
-// built-in modules have been applied.
+// built-in functions have been applied.
 var modules = platformModules.concat(baseModules);
 
 var patch = createPatchFunction({ nodeOps: nodeOps, modules: modules });
@@ -10347,7 +10347,7 @@ function createCompilerCreator (baseCompile) {
       };
 
       if (options) {
-        // merge custom modules
+        // merge custom functions
         if (options.modules) {
           finalOptions.modules =
             (baseOptions.modules || []).concat(options.modules);

@@ -1,7 +1,7 @@
-package com.senchuuhi.iweb.modules.article.service;
+package com.senchuuhi.iweb.functions.article.service;
 
 import com.senchuuhi.iweb.auto.entity.ResArticle;
-import com.senchuuhi.iweb.modules.article.constants.ArticleConstants;
+import com.senchuuhi.iweb.functions.article.constants.ArticleConstants;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.senchuuhi.iweb.modules.main.controller;
+package com.senchuuhi.iweb.functions.main.controller;
 
 
 import com.senchuuhi.iweb.base.constants.LayoutConstants;
