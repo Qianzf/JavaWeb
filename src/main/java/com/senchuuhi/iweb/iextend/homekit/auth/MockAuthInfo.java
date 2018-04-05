@@ -18,11 +18,13 @@ public class MockAuthInfo implements HomekitAuthInfo {
     private final ConcurrentMap<String, byte[]> userKeyMap = new ConcurrentHashMap<>();
 
     public MockAuthInfo() throws InvalidAlgorithmParameterException {
+        // mac 地址
         mac = HomekitServer.generateMac();
+        //
         salt = HomekitServer.generateSalt();
         privateKey = HomekitServer.generateKey();
         System.out.println("Auth info is generated each time the sample application is started. Pairings are not persisted.");
-        System.out.println("The PIN for pairing is "+PIN);
+        System.out.println("校验PIN码： " + PIN);
     }
 
     @Override

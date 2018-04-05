@@ -5,6 +5,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+/**
+ * 系统启动回调
+ */
 @Component
 public class SpringStartUp implements ApplicationContextAware {
 
@@ -20,3 +23,4 @@ public class SpringStartUp implements ApplicationContextAware {
         return applicationContext;
     }
 }
+
