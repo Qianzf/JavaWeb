@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 @ControllerAdvice
 public class PageControllerAdvice {
 
+
+
     @ModelAttribute
     public void addAttributes(Model model) {
         // 默认title
