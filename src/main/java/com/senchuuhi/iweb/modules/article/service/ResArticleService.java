@@ -1,4 +1,4 @@
-package com.senchuuhi.iweb.modules.article.iface;
+package com.senchuuhi.iweb.modules.article.service;
 
 import com.senchuuhi.iweb.auto.entity.ResArticle;
 import com.senchuuhi.iweb.modules.article.constants.ArticleConstants;

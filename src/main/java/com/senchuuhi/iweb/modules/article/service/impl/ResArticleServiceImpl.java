@@ -1,10 +1,10 @@
-package com.senchuuhi.iweb.modules.article.impl;
+package com.senchuuhi.iweb.modules.article.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.senchuuhi.iweb.auto.dao.ResArticleMapper;
 import com.senchuuhi.iweb.auto.entity.ResArticle;
 import com.senchuuhi.iweb.auto.entity.ResArticleExample;
-import com.senchuuhi.iweb.modules.article.iface.ResArticleService;
+import com.senchuuhi.iweb.modules.article.service.ResArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
