@@ -24,7 +24,7 @@ public class DataSourceConfig {
         dataSource.setDriverClassName(env.getProperty("spring.datasource.driver-class-name"));
         dataSource.setInitialSize(2);//初始化时建立物理连接的个数
         dataSource.setMaxActive(20);//最大连接池数量
-        dataSource.setMinIdle(0);//最小连接池数量
+        dataSource.setMinIdle(1);//最小连接池数量
         dataSource.setMaxWait(60000);//获取连接时最大等待时间，单位毫秒。
         dataSource.setValidationQuery("SELECT 1");//用来检测连接是否有效的sql
         dataSource.setTestOnBorrow(false);//申请连接时执行validationQuery检测连接是否有效
