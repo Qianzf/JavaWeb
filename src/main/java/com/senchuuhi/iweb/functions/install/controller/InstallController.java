@@ -52,7 +52,20 @@ public class InstallController {
     @RequestMapping("/next")
     public ModelAndView main(Model model) {
         // 设定页面
-        iss.isSqlInited();
+        String tipInfo = "安装成功！";
+        int status = iss.initSql(true, true);
+        switch(status) {
+            case 1:
+                tipInfo = "";
+                break;
+            case -1:
+                tipInfo = "表数据已经存在！是否覆盖安装？";
+                break;
+            case -2:
+                tipInfo = "表创建过程中出现未知异常！";
+                break;
+        }
+        model.addAttribute("tipInfo",tipInfo);
         model.addAttribute("pageName","install/index");
         // 返回基本布局
         return new ModelAndView(LayoutConstants.PAGE_LAYOUT_BASE);

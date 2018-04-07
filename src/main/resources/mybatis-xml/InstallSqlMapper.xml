@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="installSqlMapper">
+
+    <!-- 清空表 -->
+    <update id="dropTables" >
+        DROP TABLE IF EXISTS `iweb_user`;
+        DROP TABLE IF EXISTS `iweb_config`;
+    </update>
+
+    <!-- 创建初始表 -->
+    <update id="createTables" >
+        CREATE TABLE `iweb_user` (
+          `id` char(50) DEFAULT NULL COMMENT 'ID',
+          `username` varchar(255) DEFAULT NULL COMMENT '用户名',
+          `password` varchar(1024) DEFAULT NULL COMMENT '密码',
+          `sex` varchar(255) DEFAULT NULL,
+          `email` varchar(255) DEFAULT NULL COMMENT '用户邮件地址',
+          `phone` varchar(255) DEFAULT NULL COMMENT '用户电话',
+          `mobile` varchar(255) DEFAULT NULL COMMENT '用户手机号码',
+          `role` varchar(255) DEFAULT NULL COMMENT '用户角色',
+          `vaild` varchar(255) DEFAULT '1' COMMENT '合法性',
+          `create_date` datetime DEFAULT NULL COMMENT '创建时间',
+          `create_user` varchar(255) DEFAULT NULL COMMENT '创建用户',
+          `update_date` datetime DEFAULT NULL COMMENT '更新时间',
+          `update_user` varchar(255) DEFAULT NULL COMMENT '更新者'
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+        CREATE TABLE `iweb_config` (
+          `id` char(50) NOT NULL,
+          `name` varchar(255) DEFAULT NULL COMMENT '配置项名称',
+          `value` varchar(255) DEFAULT NULL COMMENT '配置项值',
+          `remark` varchar(255) DEFAULT NULL COMMENT '备注信息',
+          `version` varchar(255) DEFAULT NULL COMMENT '该配置项适用版本',
+          `vaild` char(2) DEFAULT '1',
+          `create_app` varchar(255) DEFAULT '' COMMENT '配置项创建程序',
+          `create_date` datetime DEFAULT NULL COMMENT '创建时间',
+          `update_app` varchar(255) DEFAULT NULL COMMENT '配置项更新程序',
+          `update_date` datetime DEFAULT NULL COMMENT '更新时间'
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+    </update>
+
+    <!-- 创建初始数据 -->
+    <update id="createDefaultDatas" >
+
+    </update>
+
+</mapper>

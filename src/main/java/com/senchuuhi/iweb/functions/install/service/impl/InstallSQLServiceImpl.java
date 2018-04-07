@@ -6,45 +6,21 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class InstallSQLServiceImpl extends BaseService implements InstallSQLService {
 
-
-    @Override
-    public boolean isSqlExist() {
-
-        return false;
-    }
-
     @Override
     public boolean isSqlConnected() {
-        Connection conn = super.getSqlSession().getConnection();
-
-        try {
-            conn.isValid(2);
-            conn.getMetaData().getSchemas();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    @Override
-    public boolean isSqlInited() {
         Connection conn = null;
         try {
             conn = super.getSqlSession().getConfiguration().getEnvironment().getDataSource().getConnection();
-            if (conn.isValid(1)) {
-                // 获取所有的表的名字
-                ResultSet rs = conn.getMetaData().getTables(conn.getCatalog(), "root", null, new String[]{"TABLE"});
-                while(rs.next()) {
-                    System.out.println(rs.getString("TABLE_NAME"));
-                }
+            if(conn.isValid(3)) {
+                // 数据库可以连接
+                return true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -53,7 +29,44 @@ public class InstallSQLServiceImpl extends BaseService implements InstallSQLServ
     }
 
     @Override
-    public boolean initSql(boolean isOverride) {
-        return false;
+    public List<String> getTableNames() {
+        List<String> list = new ArrayList<String>();
+        Connection conn = null;
+        try {
+            conn = super.getSqlSession().getConfiguration().getEnvironment().getDataSource().getConnection();
+            if (conn.isValid(1)) {
+                // 获取所有的表的名字
+                ResultSet rs = conn.getMetaData().getTables(conn.getCatalog(), "root", null, new String[]{"TABLE"});
+                while(rs.next()) {
+                    list.add(rs.getString("TABLE_NAME"));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    @Override
+    public int initSql(boolean isOverride, boolean ignoreExistTables) {
+        try {
+            if (!ignoreExistTables && this.getTableNames().size() > 0) {
+                return 1;
+            }
+            // 尝试创建table
+            if (isOverride) {
+                // drop所有的tables
+                super.getSqlSession().update("installSqlMapper.dropTables");
+            }
+            super.getSqlSession().update("installSqlMapper.createTables");
+            return 0;
+        } catch(Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            if (e.getMessage().indexOf("already exists") != -1) {
+                return -1;
+            }
+        }
+        return -2;
     }
 }
