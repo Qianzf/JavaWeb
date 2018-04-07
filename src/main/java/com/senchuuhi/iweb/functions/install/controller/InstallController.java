@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -49,12 +50,12 @@ public class InstallController {
      * @return
      */
     @RequestMapping("/next")
-    public String main(Model model) {
+    public ModelAndView main(Model model) {
         // 设定页面
         iss.isSqlInited();
         model.addAttribute("pageName","install/index");
         // 返回基本布局
-        return LayoutConstants.PAGE_LAYOUT_BASE;
+        return new ModelAndView(LayoutConstants.PAGE_LAYOUT_BASE);
     }
 
 }
