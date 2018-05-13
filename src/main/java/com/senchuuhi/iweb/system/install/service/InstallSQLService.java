@@ -1,4 +1,4 @@
-package com.senchuuhi.iweb.functions.install.service;
+package com.senchuuhi.iweb.system.install.service;
 
 import java.util.List;
 

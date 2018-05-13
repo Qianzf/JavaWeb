@@ -58,7 +58,7 @@ public class WebSocketInit implements ApplicationContextAware {
         socketPipeMethods = new ArrayList<>();
         // 指令匹配（只允许匹配一个，多个不允许！）
         for (String key : socketServiceMap.keySet()) {
-            // 获取有效的socket functions
+            // 获取有效的socket system
             WSApi service = socketServiceMap.get(key);
             // 所有的类
             Class clazz = service.getClass();

@@ -1,9 +1,9 @@
-package com.senchuuhi.iweb.base.entity;
+package com.senchuuhi.iweb.base.model;
 
 /**
  * 一个Bean的信息集合
  */
-public class BeanInfoEntity {
+public class BeanInfoModel {
 
     /** 名称 **/
     private String beanName = "";

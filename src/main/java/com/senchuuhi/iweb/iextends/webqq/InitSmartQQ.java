@@ -72,7 +72,7 @@ public class InitSmartQQ {
         // B: 声明一个登录结果的函数回调，在登录成功或者失败或异常时进行回调触发
         CallBackListener loginListener = new CallBackListener() {
 
-            // ListenerAction.data 返回登录结果 com.thankjava.wqq.entity.sys.LoginResult
+            // ListenerAction.data 返回登录结果 com.thankjava.wqq.model.sys.LoginResult
             @Override
             public void onListener(ActionListener actionListener) {
                 LoginResult loginResult = (LoginResult) actionListener.getData();

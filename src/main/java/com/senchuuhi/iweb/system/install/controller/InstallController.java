@@ -1,8 +1,8 @@
-package com.senchuuhi.iweb.functions.install.controller;
+package com.senchuuhi.iweb.system.install.controller;
 
 
 import com.senchuuhi.iweb.base.constants.LayoutConstants;
-import com.senchuuhi.iweb.functions.install.service.InstallSQLService;
+import com.senchuuhi.iweb.system.install.service.InstallSQLService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

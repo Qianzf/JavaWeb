@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class BaseService {
 
     @Autowired
-    private SqlSession session;
+    private SqlSession dao;
 
-    public SqlSession getSqlSession() {
-        return session;
+    public SqlSession getDao() {
+        return dao;
     }
 }

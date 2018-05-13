@@ -1,6 +1,6 @@
 package com.senchuuhi.iweb.base.utils;
 
-import com.senchuuhi.iweb.base.entity.BeanInfoEntity;
+import com.senchuuhi.iweb.base.model.BeanInfoModel;
 
 /**
  * 默认bean信息获取工具.
@@ -9,9 +9,9 @@ public class DefaultBeanInfoGetTool {
 
     private DefaultBeanInfoGetTool(){};
 
-    public static BeanInfoEntity getBeanInfoByCommand (String command) {
+    public static BeanInfoModel getBeanInfoByCommand (String command) {
 
-        BeanInfoEntity bie = new BeanInfoEntity();
+        BeanInfoModel bie = new BeanInfoModel();
 
         return bie;
     }

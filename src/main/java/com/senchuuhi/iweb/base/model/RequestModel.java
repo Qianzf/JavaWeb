@@ -1,9 +1,9 @@
-package com.senchuuhi.iweb.base.entity;
+package com.senchuuhi.iweb.base.model;
 
 import java.io.Serializable;
 import java.util.Map;
 
-public class ResponseEntity implements Serializable {
+public class RequestModel implements Serializable {
 
     /*** serialVersionUID ***/
     private static final long serialVersionUID = 1636161099193247911L;
@@ -11,8 +11,11 @@ public class ResponseEntity implements Serializable {
     /*** 状态 ***/
     private boolean status = true;
 
-    /*** 返回消息 ***/
-    private String message = "";
+    /*** 请求指令 ***/
+    private String command = "";
+
+    /*** 请求参数 ***/
+    private Map<String, String> query = null;
 
     /*** 附加的数据 **/
     private Object data = null;
@@ -25,12 +28,20 @@ public class ResponseEntity implements Serializable {
         this.status = status;
     }
 
-    public String getMessage() {
-        return message;
+    public String getCommand() {
+        return command;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setCommand(String command) {
+        this.command = command;
+    }
+
+    public Map<String, String> getQuery() {
+        return query;
+    }
+
+    public void setQuery(Map<String, String> query) {
+        this.query = query;
     }
 
     public Object getData() {

@@ -16,7 +16,7 @@ public class WebVisitStartUp {
     }
 
     /**
-     * 当用户正常发起请求时将会调用该方法
+     * 当用户正常发起请求时将会调用该方法, 包含所有请求
      * @param request
      * @param response
      */

@@ -251,7 +251,7 @@ var no = function (a, b, c) { return false; };
 var identity = function (_) { return _; };
 
 /**
- * Generate a static keys string from compiler functions.
+ * Generate a static keys string from compiler system.
  */
 
 
@@ -1201,7 +1201,7 @@ function dependArray (value) {
 /*  */
 
 /**
- * Option overwriting strategies are functions that handle
+ * Option overwriting strategies are system that handle
  * how to merge a parent option value and a child option
  * value into the final value.
  */
@@ -1251,7 +1251,7 @@ function mergeDataOrFn (
   vm
 ) {
   if (!vm) {
-    // in a Vue.extend merge, both should be functions
+    // in a Vue.extend merge, both should be system
     if (!childVal) {
       return parentVal
     }
@@ -1260,7 +1260,7 @@ function mergeDataOrFn (
     }
     // when parentVal & childVal are both present,
     // we need to return a function that returns the
-    // merged result of both functions... no need to
+    // merged result of both system... no need to
     // check if parentVal is a function here because
     // it has to be a function to pass previous merges.
     return function mergedDataFn () {
@@ -2072,7 +2072,7 @@ function simpleNormalizeChildren (children) {
 
 // 2. When the children contains constructs that always generated nested Arrays,
 // e.g. <template>, <slot>, v-for, or when the children is provided by user
-// with hand-written render functions / JSX. In such cases a full normalization
+// with hand-written render system / JSX. In such cases a full normalization
 // is needed to cater to all possible types of children values.
 function normalizeChildren (children) {
   return isPrimitive(children)
@@ -2620,7 +2620,7 @@ function mountComponent (
         warn(
           'You are using the runtime-only build of Vue where the template ' +
           'compiler is not available. Either pre-compile the templates into ' +
-          'render functions, or use the compiler-included build.',
+          'render system, or use the compiler-included build.',
           vm
         );
       } else {
@@ -3262,7 +3262,7 @@ function initData (vm) {
   if (!isPlainObject(data)) {
     data = {};
     "development" !== 'production' && warn(
-      'data functions should return an object:\n' +
+      'data system should return an object:\n' +
       'https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function',
       vm
     );
@@ -4115,7 +4115,7 @@ function createComponentInstanceForVnode (
     _parentElm: parentElm || null,
     _refElm: refElm || null
   };
-  // check inline-template render functions
+  // check inline-template render system
   var inlineTemplate = vnode.data.inlineTemplate;
   if (isDef(inlineTemplate)) {
     options.render = inlineTemplate.render;
@@ -4291,10 +4291,10 @@ function initRender (vm) {
   // bind the createElement fn to this instance
   // so that we get proper render context inside it.
   // args order: tag, data, children, normalizationType, alwaysNormalize
-  // internal version is used by render functions compiled from templates
+  // internal version is used by render system compiled from templates
   vm._c = function (a, b, c, d) { return createElement(vm, a, b, c, d, false); };
   // normalization is always applied for the public version, used in
-  // user-written render functions.
+  // user-written render system.
   vm.$createElement = function (a, b, c, d) { return createElement(vm, a, b, c, d, true); };
 
   // $attrs & $listeners are exposed for easier HOC creation.
@@ -4339,7 +4339,7 @@ function renderMixin (Vue) {
 
     vm.$scopedSlots = (_parentVnode && _parentVnode.data.scopedSlots) || emptyObject;
 
-    // set parent vnode. this allows render functions to have access
+    // set parent vnode. this allows render system to have access
     // to the data on the placeholder node.
     vm.$vnode = _parentVnode;
     // render self
@@ -5403,7 +5403,7 @@ function createPatchFunction (backend) {
       setScope(vnode);
     } else {
       // empty component root.
-      // skip all element-related functions except for ref (#3455)
+      // skip all element-related system except for ref (#3455)
       registerRef(vnode);
       // make sure to invoke the insert hook
       insertedVnodeQueue.push(vnode);
@@ -5661,7 +5661,7 @@ function createPatchFunction (backend) {
 
     // reuse element for static trees.
     // note we only do this if the vnode is cloned -
-    // if the new node is not cloned it means the render functions have been
+    // if the new node is not cloned it means the render system have been
     // reset by the hot-reload-api and we need to do a proper re-render.
     if (isTrue(vnode.isStatic) &&
       isTrue(oldVnode.isStatic) &&
@@ -5716,7 +5716,7 @@ function createPatchFunction (backend) {
   }
 
   var bailed = false;
-  // list of functions that can skip create hook during hydration because they
+  // list of system that can skip create hook during hydration because they
   // are already rendered on the client or has no need for initialization
   var isRenderedModule = makeMap('attrs,style,class,staticClass,staticStyle,key');
 
@@ -7082,7 +7082,7 @@ var platformModules = [
 /*  */
 
 // the directive module should be applied last, after all
-// built-in functions have been applied.
+// built-in system have been applied.
 var modules = platformModules.concat(baseModules);
 
 var patch = createPatchFunction({ nodeOps: nodeOps, modules: modules });

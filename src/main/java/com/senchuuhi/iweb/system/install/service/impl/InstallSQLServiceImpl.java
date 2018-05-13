@@ -1,7 +1,7 @@
-package com.senchuuhi.iweb.functions.install.service.impl;
+package com.senchuuhi.iweb.system.install.service.impl;
 
 import com.senchuuhi.iweb.base.service.BaseService;
-import com.senchuuhi.iweb.functions.install.service.InstallSQLService;
+import com.senchuuhi.iweb.system.install.service.InstallSQLService;
 import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
@@ -17,7 +17,7 @@ public class InstallSQLServiceImpl extends BaseService implements InstallSQLServ
     public boolean isSqlConnected() {
         Connection conn = null;
         try {
-            conn = super.getSqlSession().getConfiguration().getEnvironment().getDataSource().getConnection();
+            conn = super.getDao().getConfiguration().getEnvironment().getDataSource().getConnection();
             if(conn.isValid(3)) {
                 // 数据库可以连接
                 return true;
@@ -33,7 +33,7 @@ public class InstallSQLServiceImpl extends BaseService implements InstallSQLServ
         List<String> list = new ArrayList<String>();
         Connection conn = null;
         try {
-            conn = super.getSqlSession().getConfiguration().getEnvironment().getDataSource().getConnection();
+            conn = super.getDao().getConfiguration().getEnvironment().getDataSource().getConnection();
             if (conn.isValid(1)) {
                 // 获取所有的表的名字
                 ResultSet rs = conn.getMetaData().getTables(conn.getCatalog(), "root", null, new String[]{"TABLE"});
@@ -56,9 +56,9 @@ public class InstallSQLServiceImpl extends BaseService implements InstallSQLServ
             // 尝试创建table
             if (isOverride) {
                 // drop所有的tables
-                super.getSqlSession().update("installSqlMapper.dropTables");
+                super.getDao().update("installSqlMapper.dropTables");
             }
-            super.getSqlSession().update("installSqlMapper.createTables");
+            super.getDao().update("installSqlMapper.createTables");
             return 0;
         } catch(Exception e) {
             e.printStackTrace();
