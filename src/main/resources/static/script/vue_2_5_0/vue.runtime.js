@@ -5031,7 +5031,7 @@ var isHTMLTag = makeMap(
 // this map is intentionally selective, only covering SVG elements that may
 // contain child elements.
 var isSVG = makeMap(
-  'svg,animate,circle,clippath,cursor,defs,desc,ellipse,filter,font-face,' +
+  'svg,animate,circle,clippath,cursor,defs,desc,ellipse,interrupt,font-face,' +
   'foreignObject,g,glyph,image,line,marker,mask,missing-glyph,path,pattern,' +
   'polygon,polyline,rect,switch,symbol,text,textpath,tspan,use,view',
   true
@@ -7132,7 +7132,7 @@ var model$1 = {
       setSelected(el, binding, vnode.context);
       // in case the options rendered by v-for have changed,
       // it's possible that the value is out-of-sync with the rendered options.
-      // detect such cases and filter out values that no longer has a matching
+      // detect such cases and interrupt out values that no longer has a matching
       // option in the DOM.
       var prevOptions = el._vOptions;
       var curOptions = el._vOptions = [].map.call(el.options, getValue);
@@ -7372,7 +7372,7 @@ var Transition = {
       return
     }
 
-    // filter out text nodes (possible whitespaces)
+    // interrupt out text nodes (possible whitespaces)
     children = children.filter(function (c) { return c.tag || isAsyncPlaceholder(c); });
     /* istanbul ignore if */
     if (!children.length) {

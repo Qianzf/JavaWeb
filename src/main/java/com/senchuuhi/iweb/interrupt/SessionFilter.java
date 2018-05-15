@@ -1,4 +1,4 @@
-package com.senchuuhi.iweb.filter;
+package com.senchuuhi.iweb.interrupt;
 
 import com.senchuuhi.iweb.base.startup.WebVisitStartUp;
 import org.apache.log4j.Logger;
@@ -11,10 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * 全局过滤器配置
+ */
 @Component
 public class SessionFilter implements Filter {
 
-    Logger log = Logger.getLogger(SessionFilter.class);
+    private Logger logger = Logger.getLogger(SessionFilter.class);
 
     @Value("${application.cros.visit}")
     private String cosVisit;

@@ -1,7 +1,8 @@
 package com.senchuuhi.iweb.system.main.controller;
 
 
-import com.senchuuhi.iweb.base.controller.BaseController;
+import com.senchuuhi.iweb.base.controller.FrontBaseController;
+import com.senchuuhi.iweb.base.model.ViewModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,14 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/")
-public class MainController extends BaseController {
+public class MainController extends FrontBaseController {
 
 
     @RequestMapping("")
-    public String index(Model model) {
-
-        // 返回基本布局
-        return "main/index";
+    public ViewModel index(Model model) {
+        return super.getView();
     }
 
 }

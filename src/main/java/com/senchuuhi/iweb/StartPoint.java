@@ -17,7 +17,7 @@ public class StartPoint {
     public static void main(String[] args) {
         SpringApplication.run(StartPoint.class, args);
         // 系统启动完成后打开网址
-        openUrl("http://localhost");
+        openUrl("http://localhost/manage/publish/article");
     }
 
     public static void openUrl(String url) {

@@ -2,6 +2,7 @@ package com.senchuuhi.iweb.system.article.controller;
 
 import com.senchuuhi.iweb.base.controller.FrontBaseController;
 import com.senchuuhi.iweb.base.model.ResponseModel;
+import com.senchuuhi.iweb.base.model.ViewModel;
 import com.senchuuhi.iweb.system.article.service.AxeArticleService;
 import net.sf.json.util.JSONUtils;
 import org.slf4j.Logger;
@@ -25,12 +26,9 @@ public class AxeArticleController extends FrontBaseController {
      * @return
      */
     @RequestMapping("/main")
-    public String articleMainPage (Model model, Integer pageNumber, Integer pageSize) {
-        this.logger.info("------------------------------------------>");
+    public ViewModel articleMainPage (Model model, Integer pageNumber, Integer pageSize) {
         ResponseModel result = this.axeArticleService.getArticlesList(pageNumber, pageSize);
         model.addAttribute("data", JSONUtils.valueToString(result));
-        this.logger.info("------------------------------------------<");
-
-        return "articles/main";
+        return super.getView();
     }
 }
