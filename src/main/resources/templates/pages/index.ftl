@@ -103,12 +103,17 @@
         border: 1px solid #39f;
         box-shadow: 0 0 4px #03A9F4;
     }
+    .search {
+        padding: 0 10px;
+        float: right;
+        width: 280px;
+    }
 </style>
 
 <div class="header">
     <div style="margin: 0 auto;width: 1190px;">
         <div class="big-title">
-            AXE的前端设计
+            AXE的前端设计风格
         </div>
         <div class="small-title">
             前端开发，网站运营，网站开发，网站建设，网站制作，网站模板，wordpress，网站开发教程，建站
@@ -121,6 +126,12 @@
                 <li>商店</li>
                 <li>关于</li>
             </ul>
+        </div>
+        <div class="search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="搜索" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+            </div>
         </div>
     </div>
 </div>
