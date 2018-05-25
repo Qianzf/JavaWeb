@@ -23,42 +23,12 @@
         top: 0;
         min-width: 1190px;
         overflow: hidden;
-        box-shadow: 0 1px 3px rgba(26,26,26,.1);
         background-clip: content-box;
         position: relative;
         color: white;
     }
-    .main {
-        display: flex;
-        width: 1190px;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        margin: 14px auto 10px auto;
-        padding: 0 10px;
-        overflow: auto;
-        background: white;
-        position: relative;
-        box-shadow: 0 0 12px #1f1612;
-    }
-    .left-side {
-        min-height: 300px;
-        flex-basis:auto;
-        width: 350px;
-        order:2;
-    }
-    .content-side {
-        min-height: 900px;
-        flex-basis:auto;
-        min-width: 900px;
-        max-width: 1024px;
-        width:100%;
-        margin-right: 10px;
-        order:1;
-        background-color: transparent;
 
-    }
+
     .footer {
         text-align: center;
         padding: 3px 0px 12px 0;
@@ -67,17 +37,16 @@
         text-align: center;
         color: #9E9E9E;
         text-shadow: 0 1px 2px #999;
-        margin-right: 260px;
     }
 
     .big-title {
         font-size: 32px;
-        margin: 48px 0px 10px;
+        margin: 40px 0px 10px;
     }
 
     .small-title {
         font-size: 16px;
-        margin: 0px 0px 10px;
+        margin: 0px 0px 50px;
         color: #9eadb5;
     }
     .main-menu ul{
@@ -98,71 +67,80 @@
         border: 1px dashed lightblue;
     }
     .main-menu ul  .menu-active, .main-menu ul li:hover {
-        background-color: #39f;
+        background-color: #2a6496;
         color: white;
-        border: 1px solid #39f;
-        box-shadow: 0 0 12px 0px #003248;
+        border: 1px solid #57284C;
+        box-shadow: 0 0 12px 0px #421F3A;
+        background: linear-gradient(to top, #235179 0%,#739EC1 100%);
     }
     .search {
         padding: 0px;
         float: right;
         width: 280px;
     }
-    .content-card {
-        margin-bottom: 10px;
-        background: #fff;
-        overflow: hidden;
-        border-radius: 2px;
-        box-shadow: 0 1px 3px rgba(26,26,26,.1);
-        box-sizing: border-box;
-        width: 100%;
-        height: 200px;
-    }
-    .info-card {
-        margin-bottom: 10px;
-        background: #fff;
-        overflow: hidden;
-        border-radius: 2px;
-        box-shadow: 0 1px 3px rgba(26,26,26,.1);
-        box-sizing: border-box;
-        width:260px;
-        height:300px;
-    }
+
     .fixed-title {
         width: 100%;
         height: 48px;
         z-index: 999;
         top: 0;
-        background: #263238;
+        background: rgba(38, 50, 56, 0.94);
         position: fixed;
         box-shadow: 0 1px 7px rgb(68, 30, 62);
         border-radius: 0;
     }
     .meng-bottom {
-        background: #52234a;
+        background-color: rgba(66, 13, 54, 0.88);
+        min-width: 1190px;
         position: absolute;
         top: 0;
         height: 465px;
         width: 100%;
         box-shadow: 0 0 10px #607D8B;
+        background-image: url("/static/images/topBg.png");
     }
-    .fixed-title div{
+    .fixed-title {
         margin: 0 auto;
-        width: 1190px;
+        width: 100%;
         line-height: 48px;
-        font-size: 20px;
+        padding:0 30px;
+        font-size: 22px;
         color: white;
         text-shadow: 0 1px 2px #78909C;
+    }
+    .fixed-title i{
+        cursor: pointer;
+    }
+    .main {
+        display: flex;
+        width: 1190px;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 14px auto 10px auto;
+        padding: 0 20px;
+        position: relative;
+
+    }
+    .content {
+        width: 100%;
+        min-height: 1000px;
+        background: #e6e6e6;
+        box-shadow: 0 0 8px #2F211C;
+        border-radius: 10px;
+        overflow: auto;
     }
 </style>
 <div class="fixed-title">
     <div>
-        AXE
+        <i class="fa fa-bars" aria-hidden="true" title="菜单"></i>
+        <i class="fa fa-sign-in" aria-hidden="true" title="账号登录" style="float: right;line-height: 48px;"></i>
     </div>
 </div>
 
 <div class="header">
-    <div style="margin: 0 auto;width: 1190px;">
+    <div style="margin: 0 auto;width: 1140px;">
         <div class="big-title">
             AXE的前端设计风格
         </div>
@@ -190,24 +168,7 @@
 </div>
 
 <div class="main">
-    <!-- 侧边栏 -->
-    <div class="left-side">
-        <div class="info-card">
-
-        </div>
-    </div>
-
-    <!-- 内容栏 -->
-    <div class="content-side">
-        <div class="content-card">
-
-        </div>
-        <div class="content-card">
-
-        </div>
-        <div class="content-card">
-
-        </div>
+    <div class="content">
     </div>
 </div>
 
