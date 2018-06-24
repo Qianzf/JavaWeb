@@ -5,9 +5,9 @@ import com.senchuuhi.iweb.base.model.BeanInfoModel;
 /**
  * 默认bean信息获取工具.
  */
-public class DefaultBeanInfoGetTool {
+public class DefaultBeanInfoGetUtils {
 
-    private DefaultBeanInfoGetTool(){};
+    private DefaultBeanInfoGetUtils(){};
 
     public static BeanInfoModel getBeanInfoByCommand (String command) {
 

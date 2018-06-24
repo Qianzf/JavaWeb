@@ -22,11 +22,11 @@ public class PageViewInterceptor implements HandlerInterceptor {
 
     @Override
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
-        if (modelAndView == null) {
+/*        if (modelAndView == null) {
             modelAndView = new ModelAndView();
         }
         logger.info("视图名称：" + modelAndView.getViewName());
-        modelAndView.setViewName(LayoutConstants.PAGE_LAYOUT_BASE);
+        modelAndView.setViewName(LayoutConstants.PAGE_LAYOUT_BASE);*/
     }
 
     @Override

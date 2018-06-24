@@ -70,7 +70,7 @@ public class ResponseModel implements Serializable {
         return totalNum;
     }
 
-    public void setTotalNum(int totalNum) {
+    public void setTotalNum(long totalNum) {
         this.totalNum = totalNum;
     }
 }

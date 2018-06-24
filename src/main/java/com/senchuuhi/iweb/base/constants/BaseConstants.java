@@ -64,7 +64,7 @@ public interface BaseConstants {
     public static final String DEFAULT_PAGE_SCRIPT = "basic_script";
 
     /****** 默认显示页面 ********/
-    public static final String DEFAULT_PAGE_NAME = "index";
+    public static final String DEFAULT_PAGE_NAME = "main/index";
 
 
 }

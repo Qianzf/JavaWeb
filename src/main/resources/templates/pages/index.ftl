@@ -125,11 +125,34 @@
     }
     .content {
         width: 100%;
-        min-height: 1000px;
-        background: #e6e6e6;
-        box-shadow: 0 0 8px #2F211C;
+        min-height: 200px;
+        background: #fff;
+        box-shadow: 0 0 6px #B0BEC5;
         border-radius: 10px;
         overflow: auto;
+        padding: 10px 20px;
+    }
+    .articleList {
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        border-bottom: 1px solid #b0bec559;
+    }
+    .acticle-title {
+        margin: 13px 0 5px 0;
+        font-size: 18px;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: normal;
+        word-wrap: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 400;
+    }
+    .acticle-desc {
+        color: #999;
     }
 </style>
 <div class="fixed-title">
@@ -145,7 +168,7 @@
             AXE的前端设计风格
         </div>
         <div class="small-title">
-            前端开发，网站运营，网站开发，网站建设，网站制作，网站模板，wordpress，网站开发教程，建站
+            代码风格，归因逻辑，耦合系数，平行四边形
         </div>
         <div class="main-menu">
             <ul>
@@ -160,6 +183,7 @@
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="搜索" aria-label="Amount (to the nearest dollar)">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+
             </div>
         </div>
     </div>
@@ -169,11 +193,38 @@
 
 <div class="main">
     <div class="content">
+        <div class="articleList">
+            <p class="acticle-title">文章标题内容</p>
+            <p class="acticle-desc">gfjsgjfhdjhgjfhdjshgjfdjsgjfjdhgjhfdjhgjfdjsdfgggggggggggggggggggggggggggggggggggggggg</p>
+        </div>
+        <div class="articleList">
+            <p class="acticle-title">文章标题内容</p>
+            <p class="acticle-desc">gfjsgjfhdjhgjfhdjshgjfdjsgjfjdhgjhfdjhgjfdjsdfgggggggggggggggggggggggggggggggggggggggg</p>
+        </div>
+        <div class="articleList">
+            <p class="acticle-title">文章标题内容</p>
+            <p class="acticle-desc">gfjsgjfhdjhgjfhdjshgjfdjsgjfjdhgjhfdjhgjfdjsdfgggggggggggggggggggggggggggggggggggggggg</p>
+        </div>
+
+
+        <div id="pagination"></div>
     </div>
 </div>
+
 
 <div class="footer">
    Powered by AXE! Author: QQQZF. &copy; 2018
 </div>
-<script>
+<script type="text/javascript">
+    getStartedInitialization();
+    function getStartedInitialization(){
+        $('#pagination').extendPagination({
+            totalCount: 100,
+            showCount: 1,
+            limit: 10,
+            callback: function (curr, limit, totalCount) {
+                console.log(curr, limit, totalCount);
+            }
+        });
+    }
 </script>

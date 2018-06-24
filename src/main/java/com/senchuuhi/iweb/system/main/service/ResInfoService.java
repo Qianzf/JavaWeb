@@ -1,4 +1,4 @@
-package com.senchuuhi.iweb.system.article.service;
+package com.senchuuhi.iweb.system.main.service;
 
 
 import com.senchuuhi.iweb.wsk.entity.WSReturn;

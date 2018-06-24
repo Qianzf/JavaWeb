@@ -22,14 +22,20 @@ public class FrontBaseController extends BaseController implements BaseConstants
         model.addAttribute(PAGE_STYLE, DEFAULT_PAGE_STYLE);
         // 默认脚本文件
         model.addAttribute(PAGE_SCRIPT, DEFAULT_PAGE_SCRIPT);
+
+    }
+
+    public ViewModel getView(String pageName) {
+        ViewModel model = new ViewModel();
         // 默认模板
-        model.addAttribute(PAGE_NAME, DEFAULT_PAGE_NAME);
+        // model.getModel().(PAGE_NAME, pageName);
+        model.setViewName(LayoutConstants.PAGE_LAYOUT_BASE);
+        model.addObject(PAGE_NAME, pageName);
+        return model;
     }
 
     public ViewModel getView() {
-        ViewModel model = new ViewModel();
-        model.setViewName(LayoutConstants.PAGE_LAYOUT_BASE);
-        return model;
+        return this.getView(DEFAULT_PAGE_NAME);
     }
 
 }
